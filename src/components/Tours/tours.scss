@@ -1,0 +1,99 @@
+@use "../../constants/Styles/index" as *;
+
+
+.Salty__tours{
+    width: 100%;
+    height: 100vh;
+
+    &-textzone{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .heading{
+                font-family: $inter;
+                font-weight: 600;
+                font-size: 5.6rem;
+                line-height: 6.6rem;
+                color: $Typocolor;
+                margin-bottom: 2.4rem;
+                margin-top: 0;
+        }
+        .desc{
+            font-family: $inter;
+            font-weight: 400;
+            font-size: 1.6rem;
+            line-height: 1.6rem;
+            color: $Typolighter;
+
+        }
+        .btns{
+            max-width: 53rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 1.4rem;
+            margin-top: 2.4rem;
+            flex-wrap: nowrap;
+            button{
+                background: transparent;
+                font-family: $poppins;
+                font-weight: 400;
+                font-size: 1.4rem;
+                line-height: 1.4rem;
+                color: $Typocolor;
+                border: 1px solid $Typocolor;
+                border-radius: 46px;
+                padding: 1.2rem 2rem;
+                cursor: pointer;
+                &:hover{
+                    background-color:$Typocolor;
+                    color: #FFF;
+                    border:none;
+                }
+            }
+        }
+    }
+}
+.Salty__tours-grid{
+    margin-top: 5rem;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,  minmax(270px, 1fr) );
+    grid-auto-rows: 25rem;
+    grid-gap:3rem;
+    
+    .wide{
+        // max-width: 47rem;
+        grid-column:span 2; 
+    }
+    .tall{
+        max-width: 37rem;
+        grid-row:auto / span 2;
+    }
+}
+@include respond-to("st"){
+
+    .Salty__tours-grid{
+        margin:3rem;
+        grid-template-columns: repeat(auto-fit,  minmax(20rem, 1fr) );
+        grid-auto-rows: 20rem;
+        grid-auto-flow:dense;
+        grid-gap:2rem;
+        }
+}
+@include respond-to("large"){
+    .Salty__tours-textzone .btns{
+        flex-wrap: wrap;
+    }
+    .Salty__tours-grid{
+        margin:3rem;
+        grid-template-columns: repeat(auto-fit,  minmax(15rem, 1fr) );
+        grid-auto-rows: 15rem;
+        grid-auto-flow:dense;
+        grid-gap:1rem;
+        }
+}
+@include respond-to("small"){
+    .Salty__tours{
+        height: 100%;
+    }
+}

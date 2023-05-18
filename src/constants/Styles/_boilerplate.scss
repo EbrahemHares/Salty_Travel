@@ -1,7 +1,111 @@
+@use "./breakpoints" as *;
+
+//colors 
+$prim-bg:#FAF8ED;
+$accent:#F66F4D;
+$Typocolor:#2D3134;
+$Typolighter:#5B5F62;
+$Navcolor:#2E476B;
+$strokeline:#EAEAEB;
+$greytext:#9498A4;
+$Yelloish:#FFC14B;
+$boxShad: 0px 28px 56px -6px rgba(246, 111, 77, 0.05);
+
+
+// fonts 
+$inter:'Inter', sans-serif; //primary font 
+$sen:'Sen', sans-serif; // Display font
+$poppins:'Poppins', sans-serif; // Navigation font 
+
+
+
 html {
     font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    // scroll-padding-top: 3rem;
 }
 
 *{
     box-sizing: border-box;
+    border:none; outline:none;
+    transition: .3s linear;
+    text-decoration:none;
+}
+
+body{
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background-color:$prim-bg;
+    -webkit-font-smooting:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+    
+.viewport{
+    width:100%;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // border: 1px solid black;
+}
+.view{
+    width: 100vw;
+    height: 100vh;
+}
+
+.container-reverse{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.paddingX{
+    padding: 0 13.5rem;
+}
+.marginY{
+    margin: 6rem 0;
+}
+
+.btn{
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    color:$accent;
+    text-align: center;
+    font-weight: 500;
+    display: flex;
+    background-color: transparent;
+    gap: .6rem;
+    align-items: center;
+    padding: 1.9rem 3.4rem;
+    border: .14rem solid $accent;
+    border-radius: 2.7rem;
+}
+
+@include respond-to ('st'){
+    
+    .container,
+    .container-reverse{
+        flex-direction: column;
+    }
+}
+@include respond-to ('large'){
+    .marginY{
+        margin: 4.5rem 0;
+    }
+    .paddingX{
+        padding: 0 6.5rem;
+    }
+}
+@include respond-to ('small'){
+    .marginY{
+        margin: 3rem 0;
+    }
+    .paddingX{
+        padding: 0 2.5rem;
+    }
 }

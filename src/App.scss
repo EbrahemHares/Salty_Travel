@@ -1,2 +1,43 @@
 @use './constants/Styles/index' as *;
 @import '../node_modules/modern-normalize/modern-normalize.css';
+
+
+.arrows{
+    &-first{
+        margin-right: 1.6rem;
+        display: inline-block;
+        width: 5.4rem;
+        height: 5.4rem;
+        line-height: 5.4rem;
+        border-radius: 50%;
+        background: transparent;
+        text-align: center;
+        color:$Typocolor;
+        cursor: pointer;
+        border:.1rem solid $Typocolor;
+        transition: all 0.001s ease;
+        &:hover{
+            color:#FFF;
+            background: $Typocolor;
+        }
+    }
+    &-second{
+        transition: all 0.001s ease;
+        border:.1rem solid $Typocolor;
+        cursor: pointer;
+        text-align: center;
+        display: inline-block;
+        width: 5.4rem;
+        height: 5.4rem;
+        line-height: 5.4rem;
+        border-radius: 50%;
+        background: transparent;
+        color:$Typocolor;
+        &:hover{
+            color:#FFF;
+            background: $Typocolor;
+        }
+
+    }
+
+}

@@ -1,0 +1,50 @@
+@use "../../constants/Styles/index" as *;
+
+.Salty__home{
+    height: 100%;
+    &-textzone{
+        width: 50%;
+        h1{
+            font-family: $sen;
+            font-weight: 700;
+            font-size: 8.4rem;
+            line-height: 8.6rem;
+            /* or 102% */
+            color:$Typocolor;
+        }
+        p{
+            font-family: $inter;
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 2.8rem;
+            color: $Typolighter;
+        }
+    }
+    &-image{
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+
+
+@include respond-to ('st'){
+    .Salty__home-textzone{
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+}
+@include respond-to ('small'){
+    .Salty__home-textzone{
+        h1{
+            font-size: 5.4rem;
+            line-height: 5.6rem;
+        }
+        p{
+            font-size: 1.2rem;
+            line-height: 2.2rem;
+        }
+    }
+}

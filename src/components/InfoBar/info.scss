@@ -1,0 +1,97 @@
+@use "../../constants/Styles/index" as *;
+
+.Infobar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:90%;
+    border-radius: 3.8rem;
+    padding: 2rem 2.8rem;
+    background: #FDFEFF;
+    box-shadow: 0px 28px 56px -6px rgba(246, 111, 77, 0.05);
+    margin-top: 4.4rem;  
+      .info__location{
+        text-align: left;
+        h4{
+          margin-top: 0;
+          margin-bottom: 0rem;
+          font-weight: 500;
+          font-size: 1.8rem;
+          line-height: 1.7rem;
+          color: $Typocolor;
+        }
+        &-content{
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          
+          font-family: $inter;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1.2rem;
+          line-height: 1.2rem;
+          color: $greytext;
+        }
+      }
+      .info__date{
+        text-align: left;
+        h4{
+          margin-top: 0;
+          margin-bottom: .3rem;
+          font-weight: 500;
+          font-size: 1.8rem;
+          line-height: 1.7rem;
+          color: $Typocolor;
+        }
+        &-content{
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          font-family: $inter;
+          font-weight: 400;
+          font-size: 1.2rem;
+          line-height: 1.2rem;
+          color: $greytext;
+        }
+      }
+      .info__search{
+        width: 54px;
+        height: 54px;
+        line-height: 54px;
+        background: #F66F4D;
+        border-radius: 50%;
+        text-align: center;
+        span{
+          color:white;
+        }
+      }
+  }
+
+  P{
+    margin-top: 0;
+    margin-bottom: .3rem;
+  }
+
+  @include respond-to ('small'){
+    .Infobar{
+      width: 100%;
+      padding: 1.2rem 2rem;
+      .info__date,
+      .info__location{
+        h4{
+          font-size: 1.4rem;
+          line-height: 1.3rem;
+          margin-bottom: .5rem;
+        }
+        p{
+          font-size: .9rem;
+          line-height: .9rem;
+        }
+      }
+      .info__search{
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+      }
+    }
+}

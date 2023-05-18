@@ -1,0 +1,205 @@
+@use "../../../constants/Styles/index" as *;
+// private members
+// change colors here made by Laross <3
+
+$--navBg :#FFD482 ;
+$--background:#fff;
+$--textColor:#2D3134;
+
+.Navmobile{
+	display: none;
+	.main-nav {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			text-align: center;
+			background: $--background;
+			opacity: 0;
+			z-index: -1;
+			visibility: hidden;
+			transition: all .375s;
+			}
+			.main-nav.is-open {
+			opacity: 1;
+			z-index: 100;
+			visibility: visible;
+			}
+	.mobile__Navbar-booking{
+		margin-top: 1rem;
+		opacity: 0;
+		transform: translateY(-10px);
+		.btn{
+			font-size: 1.6rem;
+    		line-height: 1.6rem;
+    		color:black;
+    		text-align: center;
+    		font-weight: 500;
+    		display: flex;
+    		background-color: transparent;
+    		gap: .6rem;
+    		align-items: center;
+    		padding: 1.3rem 2.9rem;
+    		border: .14rem solid black;
+    		border-radius: 2.1rem;
+		}
+	}
+	.mobile__Navbar-booking.is-open{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+/* Yellow band effect */
+.main-nav::before {
+  content: '';
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: -15px;
+   background: $--navBg;
+   transform-origin: 0 0;
+   transform: skew(-14deg) translateX(-120%);
+   transition: all .275s .1s;
+}
+
+.main-nav.is-open::before {
+  transform: skew(-14deg) translateX(0);
+}
+
+.main-nav ul {
+  display: inline-flex;
+  flex-direction: column;
+  height: 100%; 
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-18%) skew(-16deg);
+}
+.main-nav li {
+  display: block;
+  margin: 1rem 0;
+  text-align: right;
+  transform: skew(16deg);
+  font-family:$sen;
+  font-size: 2.5rem;
+}
+.main-nav div {
+  display: block;
+//   margin: 1rem 0rem 0 6rem;
+//   text-align: right;
+	// border: 1px solid black;
+  	transform: skew(16deg);
+	padding: 2rem 0;
+}
+
+/* Apparition effect on links */
+.main-nav a {
+  opacity: 0;
+  transform: translateY(-10px);
+}	
+
+.main-nav.is-open a {
+  opacity: 1;
+  transform: translateY(0);
+}
+.main-nav li:nth-child(1) a {
+	transition: all 275ms 175ms
+}
+.main-nav li:nth-child(2) a {
+	transition: all 275ms 225ms
+}
+.main-nav li:nth-child(3) a {
+	transition: all 275ms 275ms
+}
+.main-nav li:nth-child(4) a {
+	transition: all 275ms 325ms
+}
+.main-nav li:nth-child(5) a {
+	transition: all 275ms 375ms
+}
+.main-nav div  {
+	transition: all 275ms 400ms
+}
+
+
+/* Decoration */
+.main-nav ul,
+.main-nav li {
+	list-style: none;
+	padding: 0;
+}
+
+.main-nav a {
+	display: block;
+	padding: 2rem 0;
+	color: $--textColor;
+	font-size: 1.4em;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.burger {
+	position: relative;
+	display: block;
+	width: 28px;
+	height: 4px;
+	margin: 0 auto;
+	background: $--textColor;
+	transform: skew(5deg);
+	transition: all .275s;
+}
+
+.burger:after,
+.burger:before {
+	content: '';
+	display: block;
+	height: 100%;
+	background: $--textColor;
+	transition: all .275s;
+}
+
+.burger:after {
+	transform: translateY(-12px) translateX(-2px) skew(-20deg);
+}
+
+.burger:before {
+	transform: translateY(-16px) skew(-10deg);
+}
+
+/* Toggle State part */
+.is-open .burger {
+	transform: skew(5deg) translateY(-8px) rotate(-45deg);
+}
+
+.is-open .burger:before {
+	transform: translateY(0px) skew(-10deg) rotate(75deg);
+}
+
+.is-open .burger:after {
+	transform: translateY(-12px) translateX(10px) skew(-20deg);
+    opacity: 0;
+}
+
+/* MENU Text part */
+
+.burger-text {
+	display: block;
+	font-size: .675rem;
+	letter-spacing: .05em;
+	margin-top: .5em;
+	text-transform: uppercase;
+	font-weight: 500;
+	text-align: center;
+	color: $--textColor;
+}
+
+
+
+@include respond-to('st'){
+	.Navmobile{
+		display: block;
+	}
+}

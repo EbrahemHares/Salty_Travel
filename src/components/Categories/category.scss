@@ -1,0 +1,79 @@
+@use "../../constants/Styles/index" as *;
+
+.Salty__Category{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    .Salty__Category-textzone{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6rem;
+        .content{
+            flex:0.4;
+            h2{
+                font-family: $inter;
+                font-weight: 600;
+                font-size: 5.6rem;
+                line-height: 5.6rem;
+                color: $Typocolor;
+                margin-bottom: 2.4rem;
+            }
+            p{
+                font-family: $inter;
+                font-weight: 400;
+                font-size: 1.6rem;
+                line-height: 2.6rem;
+                color: $Typolighter;
+            }
+        }
+        
+    }
+    .Salty__Category-options{
+        overflow: hidden;
+        width: 100%;
+        // border: 1px solid black;
+        .inner_carousel{
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap:2rem;
+        }
+    }
+}
+
+@include respond-to ('large'){
+    .Salty__Category{
+        .Salty__Category-textzone{
+            flex-direction: column;
+            gap:2rem;
+        }
+        .arrows{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+}
+}
+@include respond-to ('small'){
+    .Salty__Category{
+        margin: 10rem 0;
+    }
+    .Salty__Category-textzone{
+        .content{
+            h2{
+                font-size: 4.4rem;
+                line-height: 4.6rem;
+            }
+            p{
+                font-size: 1.2rem;
+                line-height: 2.2rem;
+            }
+        }
+    }
+    .Salty__Category .Salty__Category-textzone .content h2{
+        font-size: 4.4rem;
+        line-height: 4.6rem;
+    }
+}
