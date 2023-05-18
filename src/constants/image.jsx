@@ -17,7 +17,7 @@ import aboutimg from "../assets/about.png"
 import Pop01 from "../assets/popular01.png"
 import Pop02 from "../assets/popular02.png"
 import Pop03 from "../assets/popular01.png"
-import Pop04 from "../assets/Popular04.png"
+import Pop04 from "../assets/popular04.png"
 import Testim from "../assets/Testimonial.png"
 
 
