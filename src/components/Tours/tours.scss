@@ -4,6 +4,7 @@
 .Salty__tours{
     width: 100%;
     height: 100vh;
+    // margin-bottom: 15rem;
 
     &-textzone{
         display: flex;
@@ -71,7 +72,9 @@
     }
 }
 @include respond-to("st"){
-
+    .Salty__tours{
+        height: 100%;
+    }
     .Salty__tours-grid{
         margin:3rem;
         grid-template-columns: repeat(auto-fit,  minmax(20rem, 1fr) );
@@ -81,7 +84,9 @@
         }
 }
 @include respond-to("large"){
+    
     .Salty__tours-textzone .btns{
+        justify-content: center;
         flex-wrap: wrap;
     }
     .Salty__tours-grid{

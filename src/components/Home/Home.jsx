@@ -11,7 +11,7 @@ const Home = () => {
         <Info />
       </div>
       <div className="Salty__home-image">
-        <img src={heroimg} alt="hero" />
+        <img  src={heroimg} alt="hero" />
       </div>
     </div>
   )

@@ -85,7 +85,13 @@
         }
     }
 }
+@include respond-to ('st'){
+    .Salty__testimonial{
+        height: 100%;
+    }
+}
 @include respond-to ('large'){
+
     .Salty__testimonial-textzone{
         .heading{
             width: 100%;

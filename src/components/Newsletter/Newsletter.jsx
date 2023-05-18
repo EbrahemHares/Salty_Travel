@@ -17,7 +17,7 @@ const Newsletter = () => {
                 </div>
                 <div className="submit-container">
                     <button type="submit" className="submit-btn">
-                    <FontAwesomeIcon icon={faPaperPlane} color="#FFF" size="xs" />
+                    <FontAwesomeIcon icon={faPaperPlane} color="#FFF" size="xs" />!
                     </button>
                     
                     
